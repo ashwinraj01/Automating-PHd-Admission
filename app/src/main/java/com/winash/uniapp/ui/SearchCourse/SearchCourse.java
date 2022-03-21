@@ -43,6 +43,20 @@ public class SearchCourse extends Fragment {
         recycleview.setLayoutManager(new LinearLayoutManager(view.getContext()));
         recycleview.setAdapter(adapter);
         recycleview.setHasFixedSize(true);
+
+        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                adapter.getFilter().filter(s);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
+            }
+        });
+
         ref.child("Course").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

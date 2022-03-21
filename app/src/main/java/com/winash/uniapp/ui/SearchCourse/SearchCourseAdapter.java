@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,13 +16,16 @@ import com.winash.uniapp.R;
 import com.winash.uniapp.ui.AddCourse.Course;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
-public class SearchCourseAdapter extends RecyclerView.Adapter<SearchCourseAdapter.MyViewHolder> {
+public class SearchCourseAdapter extends RecyclerView.Adapter<SearchCourseAdapter.MyViewHolder> implements Filterable {
     public ArrayList<Course> list;
+    public ArrayList<Course> listfull;
     public Context context;
 
     public SearchCourseAdapter(ArrayList<Course> a,Context context){
         this.list=a;
+        this.listfull=new ArrayList<Course>(list);
         this.context=context;
     }
     @NonNull
@@ -43,6 +48,39 @@ public class SearchCourseAdapter extends RecyclerView.Adapter<SearchCourseAdapte
     public int getItemCount() {
         return list.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return filterfull;
+    }
+    public Filter filterfull = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            ArrayList<Course> filteredlist = new ArrayList<Course>();
+
+            if(charSequence == null || charSequence.length()==0){
+                filteredlist.addAll(listfull);
+            }else{
+                String filterPattern = charSequence.toString().toLowerCase().trim();
+
+                for(Course item: listfull){
+                    if(item.getCoursename().toLowerCase().contains(filterPattern))
+                        filteredlist.add(item);
+                }
+            }
+            FilterResults results= new FilterResults();
+            results.values=filteredlist;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+            list.clear();
+            list.addAll((ArrayList<Course>) filterResults.values);
+            notifyDataSetChanged();
+        }
+    };
+
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView coursename,campus,syllabus;

@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SEM_6/314-Software Engineering (3)/Automating-PHd-Admission/1234/Automating-PhD-Admission/app/src/main/res/layout/fragment_search_course.xml" value="0.13269927536231885" />
+        <entry key="..\:/SEM_6/314-Software Engineering (3)/Automating-PHd-Admission/1234/Automating-PhD-Admission/app/src/main/res/layout/my_search_row.xml" value="0.33" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/drawable/blacklist.xml" value="0.1695" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/drawable/button.xml" value="0.1975" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/drawable/ic_launcher_background.xml" value="0.207" />
@@ -39,7 +41,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
