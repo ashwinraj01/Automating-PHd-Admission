@@ -23,17 +23,17 @@ public class Course {
     public String campus;
     public Integer q10;
     public Integer q12;
-    public Float ug;
-    public Float pg;
+    public Double ug;
+    public Double pg;
     Course(String campus,String coursename,
             String department,
             String duration,
             String outcome,
-           Float pg,
+           Double pg,
            Integer q10,
            Integer q12,
             String syllabus,
-           Float ug
+           Double ug
             ){
         this.coursename=coursename;
         this.department=department;
@@ -79,11 +79,11 @@ public class Course {
         return q12;
     }
 
-    public Float getUg() {
+    public Double getUg() {
         return ug;
     }
 
-    public Float getPg() {
+    public Double getPg() {
         return pg;
     }
 }

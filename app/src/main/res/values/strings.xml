@@ -21,4 +21,6 @@
     <string name="menu_add_course">Add Course</string>
     <string name="menu_blacklist">Add Applicant To Blacklist</string>
     <string name="menu_faq">FAQ</string>
+    <string name="title_activity_display_particular_course">DisplayParticularCourse</string>
+    <string name="title_activity_admin_course_view">AdminCourseView</string>
 </resources>

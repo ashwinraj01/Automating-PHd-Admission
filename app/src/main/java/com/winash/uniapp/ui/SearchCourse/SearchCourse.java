@@ -77,8 +77,6 @@ public class SearchCourse extends Fragment {
             }
         });
 
-
-        Toast.makeText(view.getContext(), "blahh", Toast.LENGTH_SHORT).show();
         return view;
     }
 }

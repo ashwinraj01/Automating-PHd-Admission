@@ -259,7 +259,7 @@
             android:layout_width="130dp"
             android:layout_height="63dp"
             android:backgroundTint="#AF37A3"
-            android:text="Register"
+            android:text="Add"
             android:textColor="@color/white"
             android:layout_marginLeft="130dp"
             app:layout_constraintBottom_toBottomOf="parent"

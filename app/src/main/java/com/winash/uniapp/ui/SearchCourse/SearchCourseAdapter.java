@@ -22,7 +22,6 @@ public class SearchCourseAdapter extends RecyclerView.Adapter<SearchCourseAdapte
     public ArrayList<Course> list;
     public ArrayList<Course> listfull;
     public Context context;
-
     public SearchCourseAdapter(ArrayList<Course> a,Context context){
         this.list=a;
         this.listfull=new ArrayList<Course>(list);
@@ -90,11 +89,10 @@ public class SearchCourseAdapter extends RecyclerView.Adapter<SearchCourseAdapte
             coursename=itemView.findViewById(R.id.CourseNameDisplay);
             campus=itemView.findViewById(R.id.CourseCampusDisplay);
             syllabus=itemView.findViewById(R.id.CourseSyllabusDisplay);
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    getAdapterPosition();
+
                 }
             });
         }

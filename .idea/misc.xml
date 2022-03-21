@@ -17,13 +17,15 @@
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/activity_admin_home_page.xml" value="0.2604166666666667" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/activity_applicant_home_page.xml" value="0.27447916666666666" />
+        <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/activity_display_particular_course.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/activity_forgot_password.xml" value="0.27447916666666666" />
-        <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/activity_login_user.xml" value="0.27447916666666666" />
+        <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/activity_login_user.xml" value="0.49606299212598426" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/activity_register_user.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/activity_user_home_page.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/app_bar_admin_dashboard.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/content_admin_dashboard.xml" value="0.27447916666666666" />
+        <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/content_display_particular_course.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/fragment_add_course.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/fragment_blacklist_user.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/fragment_faq.xml" value="0.27447916666666666" />
@@ -32,7 +34,7 @@
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/fragment_search_course.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/fragment_slideshow.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/login.xml" value="0.27447916666666666" />
-        <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/my_search_row.xml" value="0.264" />
+        <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/my_search_row.xml" value="0.4375" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/nav_header_admin_dashboard.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/register_applicant.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/userhomepage.xml" value="0.2015625" />
