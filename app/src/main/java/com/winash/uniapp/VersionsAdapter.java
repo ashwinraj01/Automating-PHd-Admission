@@ -1,5 +1,6 @@
 package com.winash.uniapp;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,8 +61,8 @@ public class VersionsAdapter extends RecyclerView.Adapter<VersionsAdapter.Versio
             ansTxt = itemView.findViewById(R.id.ans);
             userTxt = itemView.findViewById(R.id.user);
 
-            linearLayout = itemView.findViewById(R.id.linear_layout);
-            expandableLayout = itemView.findViewById(R.id.expandable_layout);
+            linearLayout = itemView.findViewById(R.id.linear_layout_user_faq_view);
+            expandableLayout = itemView.findViewById(R.id.expandable_layout_user_faq);
 
             linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear_layout_admin_faq_view"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/que_admin"
+            android:text="Question..."
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:padding="16dp"
+            android:textColor="@color/black"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/expandable_layout_user_faq_admin"
+            android:orientation="vertical"
+            >
+
+
+        <EditText
+            android:id="@+id/ans_admin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:padding="16dp"
+            android:hint="Enter a reply"
+            android:textColorHint="@color/darkgray"
+            android:textColor="@color/darkgray"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_reply_admin"
+            android:text="reply"
+            android:layout_gravity="right"
+            android:layout_margin="5dp"
+            android:background="@drawable/side_nav_bar">
+
+        </Button>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
