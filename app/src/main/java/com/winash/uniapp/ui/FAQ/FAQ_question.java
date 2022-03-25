@@ -2,7 +2,7 @@ package com.winash.uniapp.ui.FAQ;
 
 public class FAQ_question {
     public String question,answer;
-    private boolean expandable;
+    public boolean expandable;
     public FAQ_question() {
         this.question =null;
         this.answer = null;

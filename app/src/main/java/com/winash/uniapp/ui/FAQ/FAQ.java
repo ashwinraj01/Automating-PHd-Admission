@@ -33,18 +33,17 @@ import java.util.ArrayList;
 import java.util.List;
 public class FAQ extends Fragment {
     private RecyclerView recyclerview;
-    private List<FAQ_question> versionList;
+    private ArrayList<FAQ_question> versionList;
     private EditText reply;
+    private String ans;
     private DatabaseReference ref;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = null;
         view = inflater.inflate(R.layout.fragment_faq,container, false);
-        versionList =new ArrayList<FAQ_question>();
         try {
+            versionList =new ArrayList<>();
             recyclerview=view.findViewById(R.id.recyclerView_admin_faq);
-            reply=view.findViewById(R.id.ans_admin);
-            String ans=reply.getText().toString().trim();
             ref= FirebaseDatabase.getInstance().getReference("Faqs");
             FAQfragementadapter adapter= new FAQfragementadapter(versionList,view.getContext());
             recyclerview.setLayoutManager(new LinearLayoutManager(view.getContext()));
@@ -56,6 +55,7 @@ public class FAQ extends Fragment {
                     for(DataSnapshot s:snapshot.getChildren()){
                         FAQ_question question=s.getValue(FAQ_question.class);
                         versionList.add(question);
+                        //Toast.makeText(getContext(),  question.getQuestion()+question.getAnswer(), Toast.LENGTH_SHORT).show();
                     }
                     adapter.notifyDataSetChanged();
                 }
@@ -64,11 +64,10 @@ public class FAQ extends Fragment {
 
                 }
             });
-        }catch (Exception e){
-            Toast.makeText(getView().getContext(), e.toString(), Toast.LENGTH_SHORT).show();
         }
-
-
+    catch (Exception e){
+        Toast.makeText(view.getContext(),e.toString(), Toast.LENGTH_SHORT).show();
+    }
         return view;
     }
 }
