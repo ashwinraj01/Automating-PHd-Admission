@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.TextView;
 
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -63,6 +62,7 @@ public class AdminDashboard extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_logout:
                 startActivity(new Intent(this, LoginUser.class));
+                mAuth.signOut();
                 finish();
                 return true;
             default:

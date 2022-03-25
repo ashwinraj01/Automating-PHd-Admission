@@ -29,5 +29,5 @@
     <string name="menu_faq">FAQ</string>
     <string name="title_activity_display_particular_course">DisplayParticularCourse</string>
     <string name="title_activity_admin_course_view">AdminCourseView</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Signout</string>
 </resources>

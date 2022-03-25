@@ -77,7 +77,7 @@ public class BlacklistAdapter extends RecyclerView.Adapter<BlacklistAdapter.MyVi
                     db= FirebaseDatabase.getInstance().getReference("Applicant");
                     db.child(list.get(getAdapterPosition()).getApplicantid()).child("black").setValue(!(list.get(getAdapterPosition()).isBlack()));
                     list.clear();
-                    view.getContext().startActivity(new Intent(view.getContext(), AdminDashboard.class));
+                    context.startActivity(new Intent(view.getContext(), AdminDashboard.class));
                 }
             });
         }
