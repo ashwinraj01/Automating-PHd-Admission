@@ -19,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.winash.uniapp.AdminCourseView;
 import com.winash.uniapp.AdminDashboard;
 import com.winash.uniapp.Applicant;
+import com.winash.uniapp.LoginUser;
 import com.winash.uniapp.R;
 import com.winash.uniapp.ui.AddCourse.Course;
 import com.winash.uniapp.ui.SearchCourse.SearchCourseAdapter;

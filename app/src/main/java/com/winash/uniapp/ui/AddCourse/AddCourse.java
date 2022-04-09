@@ -129,7 +129,7 @@ private ProgressBar progress;
             qPG.requestFocus();
             return;
         }
-        if(dead.isEmpty()||isValid(dead))
+        if(dead.isEmpty())
         {
             Deadline.setError("Date Invalid!!!");
             Deadline.requestFocus();
@@ -168,15 +168,6 @@ private ProgressBar progress;
             return true;
         else
             return false;
-    }
-    public boolean isValid(String dateStr) {
-        Date date = null;
-        try {
-            date = new SimpleDateFormat("dd/MM/yyyy").parse(dateStr);
-        } catch (Exception ex) {
-            return false;
-        }
-        return true;
     }
     public boolean floatchecker(String a){
         int flag=0;

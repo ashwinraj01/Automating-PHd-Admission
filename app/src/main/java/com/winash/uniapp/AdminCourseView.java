@@ -60,7 +60,7 @@ public class AdminCourseView extends AppCompatActivity {
     upda.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent up=new Intent(AdminCourseView.this,AdminCourseUpdation.class);
+            Intent up=new Intent(view.getContext(),AdminCourseUpdation.class);
             up.putExtra("coursee",now);
                 startActivity(up);
                 finish();

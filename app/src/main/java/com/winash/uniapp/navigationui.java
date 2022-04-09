@@ -93,6 +93,10 @@ public class navigationui extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+    @Override
+    public void onBackPressed () {
+finish();
+    }
 
     @Override
     public boolean onSupportNavigateUp() {

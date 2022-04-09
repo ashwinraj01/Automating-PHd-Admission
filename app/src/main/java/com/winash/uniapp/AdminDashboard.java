@@ -34,7 +34,6 @@ public class AdminDashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityAdminDashboardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         setSupportActionBar(binding.appBarAdminDashboard.toolbars);
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;

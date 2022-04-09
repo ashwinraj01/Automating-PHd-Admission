@@ -40,8 +40,8 @@ public class Blacklist extends Fragment {
         search=(SearchView) view.findViewById(R.id.Search_course_field_blacklist);
         list=new ArrayList<>();
         ref= FirebaseDatabase.getInstance().getReference();
-        BlacklistAdapter adapter= new BlacklistAdapter(list,view.getContext());
-        recycleview.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        BlacklistAdapter adapter= new BlacklistAdapter(list,getContext());
+        recycleview.setLayoutManager(new LinearLayoutManager(getContext()));
         recycleview.setAdapter(adapter);
         recycleview.setHasFixedSize(true);
         ref.child("Applicant").addValueEventListener(new ValueEventListener() {
