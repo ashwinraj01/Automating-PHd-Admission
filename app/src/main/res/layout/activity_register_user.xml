@@ -159,7 +159,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="361dp"
                 android:layout_height="90dp"
-                android:hint="Username"
+                android:hint="Email"
                 android:textColorHint="@color/black"
                 app:boxStrokeColor="@color/purple_500"
                 app:helperText="*required"
