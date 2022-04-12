@@ -47,11 +47,13 @@ public class Blacklist extends Fragment {
         ref.child("Applicant").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                list.clear();
                 try{
                     for(DataSnapshot db:snapshot.getChildren()){
                         Applicant c=db.getValue(Applicant.class);
                         list.add(c);
                     }
+                    adapter.filterList(list);
                     adapter.notifyDataSetChanged();
                 }
                 catch (Exception e){
@@ -76,6 +78,7 @@ public class Blacklist extends Fragment {
                         filteredlist.add(item);
                 }
                 adapter.filterList(filteredlist);
+                adapter.notifyDataSetChanged();
                 return false;
             }
         });

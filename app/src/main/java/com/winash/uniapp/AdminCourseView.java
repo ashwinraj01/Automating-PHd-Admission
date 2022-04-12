@@ -53,7 +53,6 @@ public class AdminCourseView extends AppCompatActivity {
         public void onClick(View view) {
             ref.child("Course").child(now.getCoursename()).removeValue();
             Toast.makeText(AdminCourseView.this, "Course Successfully Removed", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(AdminCourseView.this,AdminDashboard.class));
             finish();
         }
     });

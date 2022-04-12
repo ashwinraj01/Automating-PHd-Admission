@@ -35,8 +35,8 @@ public class AdminDashboard extends AppCompatActivity {
         binding = ActivityAdminDashboardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setSupportActionBar(binding.appBarAdminDashboard.toolbars);
-        DrawerLayout drawer = binding.drawerLayout;
-        NavigationView navigationView = binding.navView;
+        DrawerLayout drawer = binding.drawerLayoutAdmin;
+        NavigationView navigationView = binding.navViewAdmin;
         hview=navigationView.getHeaderView(0);
         email=(TextView) hview.findViewById(R.id.emailidafterloginadmin);
         mAuth=FirebaseAuth.getInstance();
@@ -63,6 +63,7 @@ public class AdminDashboard extends AppCompatActivity {
                 startActivity(new Intent(this, LoginUser.class));
                 mAuth.signOut();
                 finish();
+                System.exit(0);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
