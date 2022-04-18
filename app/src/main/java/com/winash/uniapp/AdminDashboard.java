@@ -45,7 +45,7 @@ public class AdminDashboard extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.search_course, R.id.add_course, R.id.blacklist,R.id.FAQ)
+                R.id.search_course, R.id.add_course, R.id.blacklist,R.id.FAQ,R.id.add_assessment)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_admin_dashboard);
