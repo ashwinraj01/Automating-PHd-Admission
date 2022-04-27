@@ -2,6 +2,8 @@ package com.winash.uniapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -26,7 +28,7 @@ import java.util.ArrayList;
 
 public class AddAssessmentMain extends AppCompatActivity {
 private TextView addassess;
-    static ListView listView;
+    static RecyclerView recycleview;
     static ArrayList<ComponentsClass> items;
     static AddAssessmentMainAdapter adapter;
     EditText input;
@@ -43,24 +45,24 @@ private TextView addassess;
             ref= FirebaseDatabase.getInstance().getReference();
             addassess =findViewById(R.id.add_assessment_course_name);
             addassess.setText(temp.getCoursename());
-            listView=findViewById(R.id.listView_addassessment);
+            recycleview=findViewById(R.id.listView_addassessment);
             input=findViewById(R.id.inputcomponents);
             enter=findViewById(R.id.addassessment);
             component=findViewById(R.id.addassessmentbutton);
             items = new ArrayList<ComponentsClass>();
             con=getApplicationContext();
-            listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            adapter = new AddAssessmentMainAdapter(getApplicationContext(), items);
+            recycleview.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+            recycleview.setAdapter(adapter);
+            recycleview.setHasFixedSize(true);
+            recycleview.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
-                public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    makeToast("Removed: " + items.get(i));
-                    removeItem(i);
+                public boolean onLongClick(View view) {
+                    makeToast("Removed: " + items.get(adapter.getItemCount()));
+                    removeItem(adapter.getItemCount());
                     return false;
                 }
             });
-            adapter = new AddAssessmentMainAdapter(getApplicationContext(), items);
-            listView.setAdapter(adapter);
-
-
             enter.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -73,7 +75,7 @@ private TextView addassess;
                         }
                     }
                     adapter.notifyDataSetChanged();
-                    makeToast("Added: " + text);
+                    makeToast("Added: " + items.size());
                 }
 
             });
@@ -103,7 +105,6 @@ private TextView addassess;
     }
     public static void addItem(ComponentsClass item) {
         items.add(item);
-
     }
 
     Toast t;

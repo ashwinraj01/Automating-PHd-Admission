@@ -35,7 +35,7 @@ public class AddAssessmentAdapter extends RecyclerView.Adapter<AddAssessmentAdap
     }
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AddAssessmentAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater=LayoutInflater.from(context);
         View view=inflater.inflate(R.layout.my_search_row,parent,false);
         return new MyViewHolder(view);
