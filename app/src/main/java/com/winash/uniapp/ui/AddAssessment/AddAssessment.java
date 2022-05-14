@@ -1,9 +1,10 @@
-package com.winash.uniapp.ui.SearchCourse;
+package com.winash.uniapp.ui.AddAssessment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -25,11 +26,13 @@ import com.winash.uniapp.ui.AddCourse.Course;
 
 import java.util.ArrayList;
 
-public class SearchCourse extends Fragment {
+public class AddAssessment extends Fragment {
     private RecyclerView recycleview;
     private SearchView search;
     private ArrayList<Course> list;
     private DatabaseReference ref;
+    private boolean flag;
+    private Button button;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view=null;
@@ -39,7 +42,7 @@ public class SearchCourse extends Fragment {
         search=(SearchView) view.findViewById(R.id.Search_course_field);
         list=new ArrayList<>();
         ref= FirebaseDatabase.getInstance().getReference();
-        SearchCourseAdapter adapter= new SearchCourseAdapter(list,view.getContext());
+        AddAssessmentAdapter adapter= new AddAssessmentAdapter(list,view.getContext());
         recycleview.setLayoutManager(new LinearLayoutManager(view.getContext()));
         recycleview.setAdapter(adapter);
         recycleview.setHasFixedSize(true);

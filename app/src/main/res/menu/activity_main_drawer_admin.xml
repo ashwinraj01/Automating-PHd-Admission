@@ -20,6 +20,9 @@
             android:id="@+id/FAQ"
             android:icon="@drawable/faq"
             android:title="@string/menu_faq" />
-
+        <item
+            android:id="@+id/add_assessment"
+            android:icon="@drawable/add"
+            android:title="Add Assessment" />
     </group>
 </menu>

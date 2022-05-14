@@ -22,8 +22,10 @@ import com.winash.uniapp.Applicant;
 import com.winash.uniapp.LoginUser;
 import com.winash.uniapp.R;
 import com.winash.uniapp.ui.AddCourse.Course;
+import com.winash.uniapp.ui.SearchCourse.SearchCourse;
 import com.winash.uniapp.ui.SearchCourse.SearchCourseAdapter;
 
+import java.sql.Time;
 import java.util.ArrayList;
 
 public class BlacklistAdapter extends RecyclerView.Adapter<BlacklistAdapter.MyViewHolder> {
@@ -35,7 +37,7 @@ public class BlacklistAdapter extends RecyclerView.Adapter<BlacklistAdapter.MyVi
     }
     public void filterList (ArrayList<Applicant> filterlist){
         list=filterlist;
-        notifyDataSetChanged();
+
     }
     @NonNull
     @Override
@@ -77,8 +79,6 @@ public class BlacklistAdapter extends RecyclerView.Adapter<BlacklistAdapter.MyVi
                 public void onClick(View view) {
                     db= FirebaseDatabase.getInstance().getReference("Applicant");
                     db.child(list.get(getAdapterPosition()).getApplicantid()).child("black").setValue(!(list.get(getAdapterPosition()).isBlack()));
-                    list.clear();
-                    context.startActivity(new Intent(view.getContext(), AdminDashboard.class));
                 }
             });
         }

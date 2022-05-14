@@ -138,7 +138,6 @@ public class AdminCourseUpdation extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(AdminCourseUpdation.this, "Course has been successfully Updated!!!!", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(AdminCourseUpdation.this, AdminDashboard.class));
                     finish();
                 }else
                 {

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.slideshow.SlideshowFragment" >
+
+    <TextView
+        android:id="@+id/add_assessment_course_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Component_Marks"
+        android:layout_marginBottom="2sp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textColor="#000000"
+android:textSize="25dp"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/header"
+        android:background="#F1FEFF"
+        >
+
+        <EditText
+            android:id="@+id/inputcomponents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Enter no.of Here" />
+
+        <ImageView
+            android:id="@+id/addassessment"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="7sp"
+            android:layout_toRightOf="@+id/inputcomponents"
+            android:src="@drawable/ic_baseline_playlist_add_check_24" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listView_addassessment"
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/addassessmentbutton"
+        android:layout_width="151dp"
+        android:layout_height="68dp"
+        android:text="Add"
+        android:layout_marginLeft="125dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+</LinearLayout>
+
+</ScrollView>

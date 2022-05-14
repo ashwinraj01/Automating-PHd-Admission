@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.winash.uniapp.databinding.ActivityAdminDashboardBinding;
 import com.winash.uniapp.databinding.ActivityNavigationuiBinding;
 
 import android.widget.Button;
@@ -43,16 +44,7 @@ public class navigationui extends AppCompatActivity {
 
         binding = ActivityNavigationuiBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         setSupportActionBar(binding.appBarNavigationui.toolbar);
-        binding.appBarNavigationui.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        try {
             fauth=FirebaseAuth.getInstance();
             ref=FirebaseDatabase.getInstance().getReference("Applicant");
             DrawerLayout drawer = binding.drawerLayout;
@@ -71,10 +63,6 @@ public class navigationui extends AppCompatActivity {
             NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_navigationui);
             NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
             NavigationUI.setupWithNavController(navigationView, navController);
-        }catch (Exception e)
-        {
-            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
-        }
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -88,6 +76,7 @@ public class navigationui extends AppCompatActivity {
                 startActivity(new Intent(this, LoginUser.class));
                 fauth.signOut();
                 finish();
+                System.exit(0);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -95,7 +84,7 @@ public class navigationui extends AppCompatActivity {
     }
     @Override
     public void onBackPressed () {
-finish();
+        //finish();
     }
 
     @Override

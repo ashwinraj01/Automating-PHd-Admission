@@ -289,8 +289,16 @@
                 android:background="@drawable/textfiled_border"
                 android:layout_marginLeft="33dp">
             </EditText>
-        </LinearLayout>
 
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Assessment :"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp">
+
+        </TextView>
         <Button
             android:id="@+id/buttoninsideupdate"
             android:layout_width="wrap_content"

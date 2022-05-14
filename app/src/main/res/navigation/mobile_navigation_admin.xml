@@ -27,4 +27,9 @@
         android:name="com.winash.uniapp.ui.FAQ.FAQ"
         android:label="@string/menu_faq"
         tools:layout="@layout/fragment_faq" />
+    <fragment
+        android:id="@+id/add_assessment"
+        android:name="com.winash.uniapp.ui.AddAssessment.AddAssessment"
+        android:label="@string/menu_add_assessment"
+        tools:layout="@layout/add_assessment_fragment" />
 </navigation>

@@ -45,14 +45,14 @@ public class MainActivity3 extends AppCompatActivity {
             }
         });
 
-//        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-//            @Override
-//            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                makeToast("Removed: " + items.get(i));
-//                removeItem(i);
-//                return false;
-//            }
-//        });
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                makeToast("Removed: " + items.get(i));
+                removeItem(i);
+                return false;
+            }
+        });
 
         adapter = new ListViewAdapter(getApplicationContext(), items);
         listView.setAdapter(adapter);
