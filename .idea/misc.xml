@@ -22,7 +22,7 @@
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/activity_add_assessment.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/activity_add_assessment_main.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/activity_admin_course_updation.xml" value="0.264" />
-        <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/activity_admin_course_view.xml" value="0.4" />
+        <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/activity_admin_course_view.xml" value="0.176" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/activity_admin_home_page.xml" value="0.2604166666666667" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/activity_applicant_home_page.xml" value="0.27447916666666666" />
@@ -45,6 +45,7 @@
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/content_admin_dashboard.xml" value="0.264" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/content_display_particular_course.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/content_navigationui.xml" value="0.27447916666666666" />
+        <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/course_view_admin_components.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/faq_card_view.xml" value="0.27447916666666666" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/fragment_add_course.xml" value="0.2" />
         <entry key="..\:/SWE_Project/Automating-PhD-Admission/app/src/main/res/layout/fragment_blacklist_user.xml" value="0.27447916666666666" />

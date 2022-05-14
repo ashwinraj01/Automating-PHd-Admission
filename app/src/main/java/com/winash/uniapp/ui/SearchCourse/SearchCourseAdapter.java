@@ -2,6 +2,7 @@ package com.winash.uniapp.ui.SearchCourse;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +13,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.winash.uniapp.AdminCourseView;
 import com.winash.uniapp.AdminDashboard;
+import com.winash.uniapp.ComponentsClass;
 import com.winash.uniapp.LoginUser;
 import com.winash.uniapp.R;
 import com.winash.uniapp.ui.AddCourse.Course;
@@ -67,6 +74,8 @@ public class SearchCourseAdapter extends RecyclerView.Adapter<SearchCourseAdapte
                     Intent now=new Intent(view.getContext(),AdminCourseView.class);
                     try {
                         now.putExtra("course", list.get(getAdapterPosition()));
+//                        Toast.makeText(view.getContext() , " "+clss.get(0).getName(), Toast.LENGTH_SHORT).show();
+
                         context.startActivity(now);
                     }catch (Exception e){
                         Toast.makeText(view.getContext(), e.toString(), Toast.LENGTH_SHORT).show();

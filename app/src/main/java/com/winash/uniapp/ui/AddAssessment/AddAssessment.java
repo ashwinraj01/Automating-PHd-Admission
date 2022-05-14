@@ -31,6 +31,7 @@ public class AddAssessment extends Fragment {
     private SearchView search;
     private ArrayList<Course> list;
     private DatabaseReference ref;
+    private boolean flag;
     private Button button;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -52,8 +53,8 @@ public class AddAssessment extends Fragment {
                     for(DataSnapshot db:snapshot.getChildren()){
                         Course c=db.getValue(Course.class);
                         list.add(c);
+                        adapter.notifyItemInserted(list.size() - 1);
                     }
-                    adapter.notifyDataSetChanged();
                 }
                 catch (Exception e){
                     Toast.makeText(xyz.getContext(), e.toString(), Toast.LENGTH_SHORT).show();
