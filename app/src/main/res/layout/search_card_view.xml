@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@color/white"
     android:paddingBottom="20dp">
@@ -27,8 +27,8 @@
 
             <TextView
                 android:id="@+id/CourseNameDisplay1"
-                android:layout_width="143dp"
-                android:layout_height="48dp"
+                android:layout_width="184dp"
+                android:layout_height="53dp"
                 android:gravity="center"
                 android:inputType="text"
                 android:minHeight="48dp"
@@ -44,17 +44,26 @@
                 app:layout_constraintVertical_bias="0.609" />
 
             <Button
-                android:id="@+id/buttoncard1"
-                android:layout_width="160dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="156dp"
-                android:text="Register"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/but2"
+                android:layout_width="80dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="56dp"
+                android:layout_marginEnd="52dp"
+                android:onClick="user"
+                android:text="view"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/buttoncard1"
+                android:layout_width="124dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="20dp"
+                android:text="Register"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.71"
                 app:layout_constraintStart_toEndOf="@+id/CourseNameDisplay1"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.033" />
+                app:layout_constraintTop_toBottomOf="@+id/but2" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

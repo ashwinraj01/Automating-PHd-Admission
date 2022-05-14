@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,15 +13,25 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+<<<<<<< Updated upstream
 import com.google.firebase.auth.FirebaseAuth;
 import com.winash.uniapp.LoginUser;
+=======
+>>>>>>> Stashed changes
 import com.winash.uniapp.R;
 import com.winash.uniapp.databinding.FragmentHomeBinding;
 import com.winash.uniapp.navigationui;
 
 public class HomeFragment extends Fragment {
+<<<<<<< Updated upstream
 TextView simply;
 FirebaseAuth fauth;
+=======
+
+
+private FragmentHomeBinding binding;
+
+>>>>>>> Stashed changes
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
         fauth=FirebaseAuth.getInstance();

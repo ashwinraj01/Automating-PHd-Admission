@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UniApp">
         <activity
+<<<<<<< Updated upstream
             android:name=".AddAssessmentMain"
+=======
+            android:name=".ViewAcitivity"
+>>>>>>> Stashed changes
             android:exported="false" />
         <activity
             android:name=".AdminCourseUpdation"
