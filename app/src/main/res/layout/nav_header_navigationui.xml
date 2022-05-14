@@ -21,6 +21,7 @@
         android:contentDescription="@string/nav_header_desc"
         android:id="@+id/imageView" />
 
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,4 +35,11 @@
         android:layout_height="wrap_content"
         android:text="@string/nav_header_subtitle"
         android:id="@+id/Email_id_for_user" />
+        android:id="@+id/textView" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 </LinearLayout>
