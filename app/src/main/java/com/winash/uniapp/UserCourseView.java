@@ -28,8 +28,8 @@ public class UserCourseView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        clss=new ArrayList<>();
         setContentView(R.layout.user_view_course);
+        clss=new ArrayList<>();
         recycleview = findViewById(R.id.CourseViewAssessmentComponents1);
         Course now = (Course) getIntent().getSerializableExtra("Course");
         DatabaseReference db = FirebaseDatabase.getInstance().getReference("Components");
