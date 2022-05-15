@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.winash.uniapp.ViewAcitivity;
 import com.winash.uniapp.ui.AddCourse.Course;
 import com.winash.uniapp.R;
 
@@ -21,6 +23,7 @@ import java.util.ArrayList;
 public class UserSearchCourseAdapter extends RecyclerView.Adapter<UserSearchCourseAdapter.MyViewHolder> {
     public ArrayList<Course> list;
     public Context context;
+    public Button viewbtn;
 
 
     public UserSearchCourseAdapter(ArrayList<Course> a, Context context) {
@@ -57,7 +60,16 @@ public class UserSearchCourseAdapter extends RecyclerView.Adapter<UserSearchCour
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+            viewbtn = itemView.findViewById(R.id.but2);
             coursename=itemView.findViewById(R.id.CourseNameDisplay1);
+            viewbtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+
+
+                }
+            });
             itemView.findViewById(R.id.buttoncard1).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
