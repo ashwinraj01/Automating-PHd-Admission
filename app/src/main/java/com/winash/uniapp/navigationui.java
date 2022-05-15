@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.Menu;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
+
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -15,8 +17,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.winash.uniapp.databinding.ActivityAdminDashboardBinding;
 import com.winash.uniapp.databinding.ActivityNavigationuiBinding;
 
@@ -35,9 +40,11 @@ public class navigationui extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityNavigationuiBinding binding;
     private TextView email,name;
-    private FirebaseAuth fauth;
     private DatabaseReference ref;
     private View hview;
+    private FirebaseAuth fauth;
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
 
     private ImageButton imgbutton;
     @Override
@@ -48,13 +55,30 @@ public class navigationui extends AppCompatActivity {
         binding = ActivityNavigationuiBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setSupportActionBar(binding.appBarNavigationui.toolbar);
-            fauth=FirebaseAuth.getInstance();
-            ref=FirebaseDatabase.getInstance().getReference("Applicant");
-            DrawerLayout drawer = binding.drawerLayout;
+        rootNode = FirebaseDatabase.getInstance();
+        reference = rootNode.getReference("Applicant");
+
+        fauth=FirebaseAuth.getInstance();
+        DrawerLayout drawer = binding.drawerLayout;
             NavigationView navigationView = binding.navView;
             hview=navigationView.getHeaderView(0);
             email=hview.findViewById(R.id.Email_id_for_user);
             name=hview.findViewById(R.id.Username_in_mainpage);
+
+        reference.child(fauth.getInstance().getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Applicant a=snapshot.getValue(Applicant.class);
+                email.setText(a.getEmail());
+                name.setText(a.getFname()+" "+a.getLname());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
             imgbutton = hview.findViewById(R.id.userprofilebutton);
 
             imgbutton.setOnClickListener(new View.OnClickListener() {
