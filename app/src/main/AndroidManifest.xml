@@ -11,7 +11,7 @@
         android:theme="@style/Theme.UniApp">
         <activity
             android:name=".AddAssessmentMain"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ViewAcitivity"
             android:exported="false" />
