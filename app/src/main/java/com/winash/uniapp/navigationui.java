@@ -22,6 +22,7 @@ import com.winash.uniapp.databinding.ActivityNavigationuiBinding;
 
 import android.widget.Button;
 import android.content.Intent;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +38,8 @@ public class navigationui extends AppCompatActivity {
     private FirebaseAuth fauth;
     private DatabaseReference ref;
     private View hview;
+
+    private ImageButton imgbutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +55,14 @@ public class navigationui extends AppCompatActivity {
             hview=navigationView.getHeaderView(0);
             email=hview.findViewById(R.id.Email_id_for_user);
             name=hview.findViewById(R.id.Username_in_mainpage);
+            imgbutton = hview.findViewById(R.id.userprofilebutton);
+
+            imgbutton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    view.getContext().startActivity(new Intent(navigationui.this,activity_update_profile.class));
+                }
+            });
 
             email.setText(fauth.getCurrentUser().getEmail());
             // Passing each menu ID as a set of Ids because each
@@ -72,6 +83,10 @@ public class navigationui extends AppCompatActivity {
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+
+            case R.id.action_updateprofile:
+                startActivity(new Intent(this, activity_update_profile.class));
+                return true;
             case R.id.action_settings:
                 startActivity(new Intent(this, LoginUser.class));
                 fauth.signOut();

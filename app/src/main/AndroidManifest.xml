@@ -10,8 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UniApp">
         <activity
+            android:name=".activity_update_profile"
+            android:exported="false" />
+        <activity
             android:name=".AddAssessmentMain"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ViewAcitivity"
             android:exported="false" />
