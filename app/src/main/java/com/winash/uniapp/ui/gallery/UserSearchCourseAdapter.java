@@ -75,7 +75,7 @@ public class UserSearchCourseAdapter extends RecyclerView.Adapter<UserSearchCour
                 @Override
                 public void onClick(View view) {
 
-                        Toast.makeText(view.getContext(), "Need to register", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(view.getContext(), " Registered "+list.get(getAbsoluteAdapterPosition()).getCoursename(), Toast.LENGTH_SHORT).show();
 
                 }
             });
