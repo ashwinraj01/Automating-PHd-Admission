@@ -6,18 +6,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.winash.uniapp.ViewAcitivity;
-import com.winash.uniapp.ui.AddCourse.Course;
 import com.winash.uniapp.R;
+import com.winash.uniapp.UserCourseView;
+import com.winash.uniapp.ui.AddCourse.Course;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 public class UserSearchCourseAdapter extends RecyclerView.Adapter<UserSearchCourseAdapter.MyViewHolder> {
@@ -76,6 +74,14 @@ public class UserSearchCourseAdapter extends RecyclerView.Adapter<UserSearchCour
 
                         Toast.makeText(view.getContext(), "Need to register", Toast.LENGTH_SHORT).show();
 
+                }
+            });
+            itemView.findViewById(R.id.but2).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent c=new Intent(view.getContext(), UserCourseView.class);
+                    c.putExtra("Course",list.get(getAbsoluteAdapterPosition()));
+                    itemView.getContext().startActivity(new Intent(view.getContext(), UserCourseView.class));
                 }
             });
         }

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ import com.winash.uniapp.databinding.FragmentHomeBinding;
 public class HomeFragment extends Fragment {
 TextView simply;
 FirebaseAuth fauth;
+public Button hobutn;
 
 
 private FragmentHomeBinding binding;
@@ -34,7 +36,7 @@ private FragmentHomeBinding binding;
         {
             Toast.makeText(v.getContext(), e.toString(), Toast.LENGTH_SHORT).show();
         }
-
         return v;
+
     }
 }
