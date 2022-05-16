@@ -13,6 +13,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 
@@ -25,6 +29,10 @@ public class MainActivity3 extends AppCompatActivity {
     EditText input;
     ImageView enter;
 
+    FirebaseAuth fauth;
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +42,9 @@ public class MainActivity3 extends AppCompatActivity {
         listView = findViewById(R.id.listView);
         input = findViewById(R.id.input);
         enter = findViewById(R.id.add);
+
+        rootNode = FirebaseDatabase.getInstance();
+        reference = rootNode.getReference("Faqs");
 
         items = new ArrayList<>();
 
@@ -65,6 +76,7 @@ public class MainActivity3 extends AppCompatActivity {
                 if (text == null || text.length() == 0) {
                     makeToast("Enter the Question.");
                 }else{
+
                     addItem(text);
                     input.setText("");
                     makeToast("Added: " + text);

@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,8 +23,9 @@ import com.google.firebase.database.ValueEventListener;
 public class activity_update_profile extends AppCompatActivity {
 
     //varables
-    TextView uname, uemail, uphno, upass;
+    TextView uname, uemail, uphno, upass , um10, um12, umug, umpg;
     TextView fullname, email;
+    TextView pl, pd, bl, bd;
     Button update;
 
     FirebaseAuth fauth;
@@ -37,8 +40,17 @@ public class activity_update_profile extends AppCompatActivity {
             uname = findViewById(R.id.updatename);
             uemail = findViewById(R.id.updateemail);
             uphno = findViewById(R.id.updatephno);
-            upass = findViewById(R.id.updatepass);
+//            upass = findViewById(R.id.updatepass);
             update = findViewById(R.id.updatebutton);
+            um10 = findViewById(R.id.updatetenth);
+            um12 = findViewById(R.id.updateinter);
+            umug = findViewById(R.id.updateugmarks);
+            umpg = findViewById(R.id.updatepgmarks);
+
+            pl = findViewById(R.id.payment_label);
+            pd = findViewById(R.id.payment_desc);
+            bl = findViewById(R.id.booking_label);
+            bd = findViewById(R.id.booking_desc);
 
             fullname = findViewById(R.id.full_name);
 
@@ -51,6 +63,10 @@ public class activity_update_profile extends AppCompatActivity {
                     Applicant a=snapshot.getValue(Applicant.class);
                     email.setText(a.getEmail());
                     fullname.setText(a.getFname()+" "+a.getLname());
+                    uname.setText(a.getFname()+" "+a.getLname());
+                    uemail.setText(a.getEmail());
+                    uphno.setText(a.getPhone());
+
                 }
 
                 @Override
@@ -63,12 +79,29 @@ public class activity_update_profile extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     rootNode = FirebaseDatabase.getInstance();
-                    reference = rootNode.getReference("Applicant");
+                    reference = rootNode.getReference("ApplicantMarks");
 
                     String fname = uname.getText().toString();
-                    String email = uname.getText().toString();
-                    String phone = uname.getText().toString();
-                    String pass = uname.getText().toString();
+                    String email = uemail.getText().toString();
+                    String phone = uphno.getText().toString();
+                    String pass = upass.getText().toString();
+                    String m10 = um10.getText().toString();
+                    String m12 = um12.getText().toString();
+                    String mug = umug.getText().toString();
+                    String mpg = umpg.getText().toString();
+                    MarksApplicantUpdation obj = new MarksApplicantUpdation(m10, m12, mug, mpg);
+                    Toast.makeText(view.getContext(), " Updated ", Toast.LENGTH_SHORT).show();
+
+                    fauth=FirebaseAuth.getInstance();
+                    reference.child(fauth.getCurrentUser().getUid()).setValue(obj).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+
+                            Toast.makeText(view.getContext(), "ApplicantMarks", Toast.LENGTH_SHORT).show();
+
+
+                        }
+                    });
 
 
 
@@ -77,6 +110,25 @@ public class activity_update_profile extends AppCompatActivity {
 
                 }
             });
+//            rootNode = FirebaseDatabase.getInstance();
+//            rootNode.getReference("ApplicantMarks").child(fauth.getInstance().getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                    MarksApplicantUpdation a=snapshot.getValue(MarksApplicantUpdation.class);
+//                    pl.setText(a.getM10());
+//                    pd.setText(a.getM12());
+//                    bl.setText(a.getMug());
+//                    bd.setText(a.getMpg());
+//
+//                }
+//
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError error) {
+//
+//                }
+//            });
+
+
 
 
         }

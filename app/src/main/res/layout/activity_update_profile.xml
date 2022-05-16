@@ -88,7 +88,7 @@
                     android:layout_centerHorizontal="true"
                     android:includeFontPadding="false"
                     android:text="#39"
-                    android:textSize="14sp" />
+                    android:textSize="20sp" />
 
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -125,11 +125,11 @@
                     android:id="@+id/booking_desc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="#39"
-                    android:includeFontPadding="false"
-                    android:textSize="14sp"
                     android:layout_below="@id/booking_label"
-                    android:layout_centerHorizontal="true"/>
+                    android:layout_centerHorizontal="true"
+                    android:includeFontPadding="false"
+                    android:text="#39"
+                    android:textSize="20sp" />
 
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -190,21 +190,21 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:layout_marginBottom="10dp">
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Password"-->
+<!--            android:layout_marginBottom="10dp">-->
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/updatepass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_baseline_security_24"
-                android:drawablePadding="10dp"
-                android:text="aabbbbbb34444"/>
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/updatepass"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:drawableLeft="@drawable/ic_baseline_security_24"-->
+<!--                android:drawablePadding="10dp"-->
+<!--                android:text="aabbbbbb34444"/>-->
 
-        </com.google.android.material.textfield.TextInputLayout>
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -215,9 +215,9 @@
                 android:id="@+id/updatetenth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:drawableLeft="@drawable/ic_baseline_assessment_24"
                 android:drawablePadding="10dp"
-                android:text="9.8"/>
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
@@ -230,9 +230,9 @@
                 android:id="@+id/updateinter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:drawableLeft="@drawable/ic_baseline_assessment_24"
                 android:drawablePadding="10dp"
-                android:text="9.2"/>
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
@@ -245,9 +245,9 @@
                 android:id="@+id/updateugmarks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:drawableLeft="@drawable/ic_baseline_assessment_24"
                 android:drawablePadding="10dp"
-                android:text="8.9"/>
+               />
 
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
@@ -260,9 +260,8 @@
                 android:id="@+id/updatepgmarks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_baseline_email_24"
-                android:drawablePadding="10dp"
-                android:text="9.0"/>
+                android:drawableLeft="@drawable/ic_baseline_assessment_24"
+                android:drawablePadding="10dp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
