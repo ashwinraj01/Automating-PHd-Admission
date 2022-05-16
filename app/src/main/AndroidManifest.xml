@@ -13,6 +13,9 @@
             android:name=".AddAssessmentMain"
             android:exported="false" />
         <activity
+            android:name=".ViewAcitivity"
+            android:exported="false" />
+        <activity
             android:name=".AdminCourseUpdation"
             android:exported="false" />
         <activity
@@ -50,6 +53,11 @@
             android:exported="false" />
         <activity
             android:name=".navigationui"
+            android:exported="false"
+            android:label="@string/title_activity_navigationui"
+            android:theme="@style/Theme.UniApp.NoActionBar" />
+        <activity
+            android:name=".UserCourseView"
             android:exported="false"
             android:label="@string/title_activity_navigationui"
             android:theme="@style/Theme.UniApp.NoActionBar" />

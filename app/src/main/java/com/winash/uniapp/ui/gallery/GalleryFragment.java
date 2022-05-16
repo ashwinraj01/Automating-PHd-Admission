@@ -44,6 +44,7 @@ public class GalleryFragment extends Fragment {
         recycleview.setLayoutManager(new LinearLayoutManager(view.getContext()));
         recycleview.setAdapter(adapter);
         recycleview.setHasFixedSize(true);
+
         ref.child("Course").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -51,6 +52,7 @@ public class GalleryFragment extends Fragment {
                     for(DataSnapshot db:snapshot.getChildren()){
                         Course c=db.getValue(Course.class);
                         list.add(c);
+                        //String cname=db.child("deadline").getValue().toString();
                     }
                     adapter.notifyDataSetChanged();
                 }
