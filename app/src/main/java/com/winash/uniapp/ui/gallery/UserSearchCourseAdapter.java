@@ -5,22 +5,37 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.winash.uniapp.LoginUser;
+import com.winash.uniapp.RegisterUser;
+import com.winash.uniapp.ViewAcitivity;
 import com.winash.uniapp.ui.AddCourse.Course;
 import com.winash.uniapp.R;
+import com.winash.uniapp.UserCourseView;
+import com.winash.uniapp.ui.AddCourse.Course;
+import com.winash.uniapp.ui.mycourse.MycourseFragment;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 public class UserSearchCourseAdapter extends RecyclerView.Adapter<UserSearchCourseAdapter.MyViewHolder> {
     public ArrayList<Course> list;
     public Context context;
+    public Button viewbtn;
+
+    FirebaseAuth fauth;
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
 
 
     public UserSearchCourseAdapter(ArrayList<Course> a, Context context) {
@@ -57,13 +72,43 @@ public class UserSearchCourseAdapter extends RecyclerView.Adapter<UserSearchCour
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+            viewbtn = itemView.findViewById(R.id.but2);
             coursename=itemView.findViewById(R.id.CourseNameDisplay1);
+            viewbtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+
+
+                }
+            });
             itemView.findViewById(R.id.buttoncard1).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
-                        Toast.makeText(view.getContext(), "Need to register", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(view.getContext(), " Registered "+list.get(getAbsoluteAdapterPosition()).getCoursename(), Toast.LENGTH_SHORT).show();
+                    rootNode = FirebaseDatabase.getInstance();
+                    fauth=FirebaseAuth.getInstance();
+                    reference=rootNode.getReference();
+                    reference.child("Registercourse").child(fauth.getCurrentUser().getUid()).setValue(list.get(getAbsoluteAdapterPosition()).getCoursename()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
 
+                            Toast.makeText(view.getContext(), "Registercourse", Toast.LENGTH_SHORT).show();
+
+                            
+                        }
+                    });
+                        
+                }
+            });
+            itemView.findViewById(R.id.but2).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent c=new Intent(view.getContext(), UserCourseView.class);
+                    c.putExtra("Course",list.get(getAbsoluteAdapterPosition()));
+                    Toast.makeText(itemView.getContext(), ""+list.get(getAbsoluteAdapterPosition()).getCoursename(), Toast.LENGTH_SHORT).show();
+                    context.startActivity(c);
                 }
             });
         }
