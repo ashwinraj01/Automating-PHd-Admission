@@ -139,6 +139,34 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView20">
 
             </androidx.recyclerview.widget.RecyclerView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+            </TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Progress:"
+                    android:layout_marginTop="10dp"
+                    android:textSize="18dp">
+                </TextView>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:id="@+id/Progress_edit_applicant"
+                    android:padding="5dp"
+                    android:background="@drawable/textfiled_border"
+                    android:layout_marginLeft="40dp">
+                </EditText>
+            </LinearLayout>
 
         <Button
                 android:id="@+id/admin_add_applicant_component"

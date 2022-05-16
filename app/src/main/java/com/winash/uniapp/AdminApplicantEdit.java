@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 public class AdminApplicantEdit extends AppCompatActivity {
     public FirebaseAuth fauth;
     public DatabaseReference ref;
+    public EditText progress;
     public TextView name,id,email,phone;
     public RecyclerView rec;
     public boolean flag=false;
@@ -36,7 +38,22 @@ public class AdminApplicantEdit extends AppCompatActivity {
         email=findViewById(R.id.Applicant_Email);
         id =findViewById(R.id.Applicant_Id);
         phone=findViewById(R.id.Applicant_Number);
+        progress=findViewById(R.id.Progress_edit_applicant);
         ref= FirebaseDatabase.getInstance().getReference("Applicant").child(appid);
+        FirebaseDatabase.getInstance().getReference("Progress").child(appid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.getValue()==null)
+                    progress.setText("");
+                else
+                    progress.setText(snapshot.getValue(String.class));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -125,9 +142,13 @@ public class AdminApplicantEdit extends AppCompatActivity {
         findViewById(R.id.admin_add_applicant_component).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseDatabase.getInstance().getReference().child("ApplicantComponents").child(appid).setValue(clss);
-                Toast.makeText(AdminApplicantEdit.this, "Updated", Toast.LENGTH_SHORT).show();
-                finish();
+                if(progress.getText().toString()!=null) {
+                    FirebaseDatabase.getInstance().getReference().child("ApplicantComponents").child(appid).setValue(clss);
+                    FirebaseDatabase.getInstance().getReference("Progress").child(appid).setValue(progress.getText().toString());
+                    Toast.makeText(AdminApplicantEdit.this, "Updated", Toast.LENGTH_SHORT).show();
+                    finish();
+                }else
+                    Toast.makeText(AdminApplicantEdit.this, "Enter the valid inputs", Toast.LENGTH_SHORT).show();
             }
         });
     }
