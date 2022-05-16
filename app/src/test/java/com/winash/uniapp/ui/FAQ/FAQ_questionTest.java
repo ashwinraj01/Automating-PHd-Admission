@@ -2,8 +2,12 @@ package com.winash.uniapp.ui.FAQ;
 
 import junit.framework.TestCase;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 public class FAQ_questionTest extends TestCase {
     FAQ_question faq = new FAQ_question();
+    @Test
     public void testGetQuestion() {
         //Test whether the initialization is set to NULL
         assertNull(faq.getQuestion());
@@ -11,7 +15,12 @@ public class FAQ_questionTest extends TestCase {
         faq.question="What to do?";
         assertEquals("What to do?",faq.getQuestion());
     }
-
+    @Test
+    public void testNotGetQuestion() {
+        faq.question="What to do?";
+        Assert.assertNotEquals("what to do?",faq.getQuestion());
+    }
+    @Test
     public void testGetAnswer() {
         //Test whether the initialization is set to NULL
         assertNull(faq.getAnswer());
@@ -19,12 +28,16 @@ public class FAQ_questionTest extends TestCase {
         faq.answer="Have fun!";
         assertEquals("Have fun!",faq.getAnswer());
     }
-
+    @Test
     public void testIsExpandable() {
         //Test whether the initialized value is set to false
         assertFalse(faq.isExpandable());
     }
-
+    @Test
+    public void testNotIsExpandable() {
+        assertTrue(!faq.isExpandable());
+    }
+    @Test
     public void testSetExpandable() {
         //Update value and then test
         faq.setExpandable(true);
