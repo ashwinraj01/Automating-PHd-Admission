@@ -16,21 +16,21 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/Component_name_view"
+            android:id="@+id/Component_name_edit_admin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Component:"
             android:textSize="18dp"></TextView>
 
-        <TextView
-            android:id="@+id/Component_Marks_view"
+        <EditText
+            android:id="@+id/Component_Marks_edit_admin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="40dp"
             android:background="@drawable/textfiled_border"
-            android:padding="5dp"></TextView>
+            android:padding="5dp"></EditText>
     </LinearLayout>
 
 

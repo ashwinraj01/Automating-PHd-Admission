@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.winash.uniapp.AdminApplicantEdit;
 import com.winash.uniapp.AdminCourseView;
 import com.winash.uniapp.AdminDashboard;
 import com.winash.uniapp.Applicant;
@@ -27,6 +28,7 @@ import com.winash.uniapp.ui.SearchCourse.SearchCourseAdapter;
 
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class BlacklistAdapter extends RecyclerView.Adapter<BlacklistAdapter.MyViewHolder> {
     public ArrayList<Applicant> list;
@@ -79,6 +81,14 @@ public class BlacklistAdapter extends RecyclerView.Adapter<BlacklistAdapter.MyVi
                 public void onClick(View view) {
                     db= FirebaseDatabase.getInstance().getReference("Applicant");
                     db.child(list.get(getAdapterPosition()).getApplicantid()).child("black").setValue(!(list.get(getAdapterPosition()).isBlack()));
+                }
+            });
+            itemView.findViewById(R.id.view_applicant).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i=new Intent(view.getContext(), AdminApplicantEdit.class);
+                    i.putExtra("applicantId",list.get(getAbsoluteAdapterPosition()).getApplicantid());
+                    itemView.getContext().startActivity(i);
                 }
             });
         }
