@@ -83,7 +83,8 @@ public class UserSearchCourseAdapter extends RecyclerView.Adapter<UserSearchCour
                 public void onClick(View view) {
                     Intent c=new Intent(view.getContext(), UserCourseView.class);
                     c.putExtra("Course",list.get(getAbsoluteAdapterPosition()));
-                    itemView.getContext().startActivity(new Intent(view.getContext(), UserCourseView.class));
+                    Toast.makeText(itemView.getContext(), ""+list.get(getAbsoluteAdapterPosition()).getCoursename(), Toast.LENGTH_SHORT).show();
+                    context.startActivity(c);
                 }
             });
         }
