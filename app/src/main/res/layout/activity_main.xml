@@ -94,7 +94,7 @@
         android:layout_width="310dp"
         android:layout_height="104dp"
         android:layout_marginBottom="372dp"
-        android:text="We offer various courses in different field of study. Register to our university to our apply for PhD"
+        android:text="We offer, various courses in different field of study. Register to our university to our apply for PhD"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"

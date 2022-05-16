@@ -12,9 +12,19 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.winash.uniapp.LoginUser;
+import com.winash.uniapp.RegisterUser;
+import com.winash.uniapp.ViewAcitivity;
+import com.winash.uniapp.ui.AddCourse.Course;
 import com.winash.uniapp.R;
 import com.winash.uniapp.UserCourseView;
 import com.winash.uniapp.ui.AddCourse.Course;
+import com.winash.uniapp.ui.mycourse.MycourseFragment;
 
 import java.util.ArrayList;
 
@@ -22,6 +32,10 @@ public class UserSearchCourseAdapter extends RecyclerView.Adapter<UserSearchCour
     public ArrayList<Course> list;
     public Context context;
     public Button viewbtn;
+
+    FirebaseAuth fauth;
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
 
 
     public UserSearchCourseAdapter(ArrayList<Course> a, Context context) {
@@ -72,8 +86,20 @@ public class UserSearchCourseAdapter extends RecyclerView.Adapter<UserSearchCour
                 @Override
                 public void onClick(View view) {
 
-                        Toast.makeText(view.getContext(), "Need to register", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(view.getContext(), " Registered "+list.get(getAbsoluteAdapterPosition()).getCoursename(), Toast.LENGTH_SHORT).show();
+                    rootNode = FirebaseDatabase.getInstance();
+                    fauth=FirebaseAuth.getInstance();
+                    reference=rootNode.getReference();
+                    reference.child("Registercourse").child(fauth.getCurrentUser().getUid()).setValue(list.get(getAbsoluteAdapterPosition()).getCoursename()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
 
+                            Toast.makeText(view.getContext(), "Registercourse", Toast.LENGTH_SHORT).show();
+
+                            
+                        }
+                    });
+                        
                 }
             });
             itemView.findViewById(R.id.but2).setOnClickListener(new View.OnClickListener() {
