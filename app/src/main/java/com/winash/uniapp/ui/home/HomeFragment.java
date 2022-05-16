@@ -29,13 +29,6 @@ private FragmentHomeBinding binding;
         fauth=FirebaseAuth.getInstance();
         View v = null;
         v = inflater.inflate(R.layout.fragment_home,container, false);
-        try {
-            simply= v.findViewById(R.id.topcourses);
-            simply.setText(fauth.getUid());
-        }catch (Exception e)
-        {
-            Toast.makeText(v.getContext(), e.toString(), Toast.LENGTH_SHORT).show();
-        }
         return v;
 
     }
