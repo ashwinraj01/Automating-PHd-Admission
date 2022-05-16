@@ -81,10 +81,6 @@ public class activity_update_profile extends AppCompatActivity {
                     rootNode = FirebaseDatabase.getInstance();
                     reference = rootNode.getReference("ApplicantMarks");
 
-                    String fname = uname.getText().toString();
-                    String email = uemail.getText().toString();
-                    String phone = uphno.getText().toString();
-                    String pass = upass.getText().toString();
                     String m10 = um10.getText().toString();
                     String m12 = um12.getText().toString();
                     String mug = umug.getText().toString();
